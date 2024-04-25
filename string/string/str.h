@@ -1,6 +1,6 @@
 #pragma once
 #include<iostream>
-
+#include<assert.h>
 
 //#define DEBUG
 
@@ -33,7 +33,7 @@ public:
 	friend std::ostream& operator<<(std::ostream& os, const String& dt);
 
 	//Statics
-	static const size_t npos = -1;
+	static constexpr const size_t npos = -1;
 
 
 private:

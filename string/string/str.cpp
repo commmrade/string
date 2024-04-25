@@ -140,6 +140,7 @@ size_t String::find(const char* to_find)
 }
 String String::substr(size_t index)
 {
+	assert(index < size + 1 && "Out of range");
 	size_t sublen = size - index + 1; // Size of new substring
 
 	char* temp = new char[sublen + 1]; //Allocating memory
@@ -150,7 +151,6 @@ String String::substr(size_t index)
 
 	delete[]temp; //Deallocating temp because temp was copied in retValue constructor
 	return retValue; //returning new string
-
 }
 
 

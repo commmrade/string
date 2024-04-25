@@ -17,9 +17,9 @@ int main()
 		//cout << a << endl;
 
 
-		str b = a.substr(7);
+		str b = a.substr(-10);
 
-		//cout << b << endl;
+		cout << b << endl;
 	}
 	
 	
