@@ -1,0 +1,3 @@
+﻿  str.cpp
+C:\vscode\gthub\string\string\string\str.cpp(64,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  string.vcxproj -> C:\vscode\gthub\string\string\x64\Debug\string.exe

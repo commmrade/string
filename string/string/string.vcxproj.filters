@@ -18,5 +18,13 @@
     <ClCompile Include="string.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="str.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="str.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
