@@ -9,10 +9,19 @@ using str = klewy::String;
 
 int main()
 {
-	str a = "hi";
-	a += " world";
-	cout << a.length() << endl;
-	
+	while (true)
+	{
+		str a = "hello world";
+		//cin.get();
 
+		//cout << a << endl;
+
+
+		str b = a.substr(7);
+
+		//cout << b << endl;
+	}
+	
+	
 	return 0;
 }

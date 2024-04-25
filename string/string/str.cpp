@@ -110,6 +110,51 @@ String String::operator+=(const String& other)
 int String::length() const {
 	return size;
 }
+size_t String::find(const char* to_find)
+{
+	if (strlen(to_find) > size)
+	{
+		return -1;
+	}
+	
+	for (int i = 0; i < size; i++)
+	{
+		bool flag = true;
+		for (int j = 0; j < strlen(to_find); j++)
+		{
+			if (str[i] != to_find[j])
+			{
+				flag = false;
+			}
+			else
+			{
+				i++;
+			}
+		}
+		if (flag)
+		{
+			return i - strlen(to_find);
+		}
+	}
+	return -1;	
+}
+String String::substr(size_t index)
+{
+	size_t sublen = size - index + 1; // Size of new substring
+
+	char* temp = new char[sublen + 1]; //Allocating memory
+	memcpy(temp, str + index - 1, sublen); //-1 because the index starts from 1
+	temp[sublen] = '\0'; 
+
+	String retValue(temp); //Creating a new string
+
+	delete[]temp; //Deallocating temp because temp was copied in retValue constructor
+	return retValue; //returning new string
+
+}
+
+
+
 
 }
 

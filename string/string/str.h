@@ -25,10 +25,16 @@ public:
 
 	//Methods
 	int length() const;
-
+	size_t find(const char* to_find);
+	String substr(size_t index);
+	
 
 	//Friend methods
 	friend std::ostream& operator<<(std::ostream& os, const String& dt);
+
+	//Statics
+	static const size_t npos = -1;
+
 
 private:
 	char* str;
