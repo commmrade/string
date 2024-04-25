@@ -2,7 +2,7 @@
 #include<iostream>
 
 
-#define DEBUG
+//#define DEBUG
 
 
 namespace klewy
@@ -22,13 +22,12 @@ public:
 	String operator+(const String& other);
 	String operator+=(const String& other);
 
-	
 
 	//Methods
-	void print_out()
-	{
-		std::cout << str << std::endl;
-	}
+	int length() const;
+
+
+	//Friend methods
 	friend std::ostream& operator<<(std::ostream& os, const String& dt);
 
 private:

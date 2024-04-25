@@ -9,10 +9,9 @@ using str = klewy::String;
 
 int main()
 {
-	str a = "ndaskdask";
-	a += "s suckfdsjoipsdaofisdhfioashfshfuisdhfuaidshfuishfaduisohfadsiufhdiuofhdsouihfdsiuofhdiuohfshifufifoishufishiuof";
-
-	cout << a << endl;
+	str a = "hi";
+	a += " world";
+	cout << a.length() << endl;
 	
 
 	return 0;

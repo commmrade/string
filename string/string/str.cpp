@@ -107,7 +107,9 @@ String String::operator+=(const String& other)
 
 	return *this; //Returning itself
 }
-
+int String::length() const {
+	return size;
+}
 
 }
 
