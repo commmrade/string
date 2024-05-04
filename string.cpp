@@ -9,18 +9,16 @@ using str = klewy::String;
 
 int main()
 {
-	while (true)
-	{
-		str a = "hello world";
-		//cin.get();
+	str a = "fuck";
+	str b = "cccc";
 
-		//cout << a << endl;
+	str c = a + b;
+
+	cout << c << endl;
+
+	cout << c.length() << endl;
 
 
-		str b = a.substr(-10);
-
-		cout << b << endl;
-	}
 	
 	
 	return 0;

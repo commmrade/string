@@ -1,4 +1,5 @@
 #include "str.h"
+#include <cstring>
 
 
 namespace klewy
@@ -75,7 +76,11 @@ String String::operator+(const String& other)
 	delete[]temp; //Deallocating memory for the temp
 
 	str[tmp_size] = '\0'; 
-	strcat_s(str, size + 2, other.str); //Connecting two string together; size + 2: 2 stands for 2 null terminators.
+
+
+	strncat(str, other.str, other.size + 2); //Connecting two string together; size + 2: 2 stands for 2 null terminators.
+	
+    
 	//The first was before concat. The second is for the final concated string
 #ifdef DEBUG
 	printf("Operator +\n");

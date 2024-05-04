@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 #include<assert.h>
-
+#include<cstring>
 //#define DEBUG
 
 
