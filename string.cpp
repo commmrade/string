@@ -9,7 +9,7 @@ using str = klewy::String;
 
 int main()
 {
-	str a = "fuck";
+	str a = "hell";
 	str b = "cccc";
 
 	str c = a + b;
