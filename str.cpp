@@ -92,6 +92,8 @@ String String::operator+(const String& other)
 
 String String::operator*(unsigned int times)
 {
+	
+
 	int temp_size = this->size * times;
 	char *temp = new char[temp_size + 1]; //allocating memory for multiplied string + null terminator
 	
@@ -154,10 +156,11 @@ size_t String::find(const char* to_find)
 			if (str[i] != to_find[j])
 			{
 				flag = false;
+				break;
 			}
 			else
 			{
-				i++;
+				i++; //If  equal move the string index
 			}
 		}
 		if (flag)

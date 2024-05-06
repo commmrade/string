@@ -7,6 +7,11 @@ using namespace std;
 
 using str = klewy::String;
 
+void напечатать_хв()
+{
+
+}
+
 
 int main()
 {
@@ -17,8 +22,8 @@ int main()
 
 	str c = a * 2;
 
-	cout << c << endl;
-	cout << c.length() << endl;
+	cout << c << " erm" << endl;
+	
 
 	
 	
