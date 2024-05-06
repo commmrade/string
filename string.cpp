@@ -1,3 +1,4 @@
+#include <cstdio>
 #include<iostream>
 #include "str.h"
 
@@ -9,16 +10,17 @@ using str = klewy::String;
 
 int main()
 {
-	str a = "hell";
-	str b = "cccc";
+	
+	
+	str a = "_Test_";
+	// str b = "cccc";
 
-	str c = a + b;
+	str c = a * 2;
 
 	cout << c << endl;
-
 	cout << c.length() << endl;
 
-
+	
 	
 	
 	return 0;

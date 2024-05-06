@@ -1,4 +1,5 @@
 #include "str.h"
+#include <cstdio>
 #include <cstring>
 
 
@@ -88,6 +89,29 @@ String String::operator+(const String& other)
 	
 	return *this;
 }
+
+String String::operator*(unsigned int times)
+{
+	int temp_size = this->size * times;
+	char *temp = new char[temp_size + 1]; //allocating memory for multiplied string + null terminator
+	
+	for(int i = 0; i < times; i++)
+	{
+		snprintf(temp + (i * this->size), this->size + 1, "%s", this->str); //copying itself n times
+	}
+	temp[temp_size] = '\0'; //Null terminating this moron to avoid any problems
+	
+
+	delete [] this->str; //Deallocating the old str
+
+	size = temp_size; //Updating size
+
+	this->str = temp; //Changing str
+
+	return *this;
+}
+
+
 String String::operator=(const String& other)
 {
 	
@@ -157,6 +181,7 @@ String String::substr(size_t index)
 	delete[]temp; //Deallocating temp because temp was copied in retValue constructor
 	return retValue; //returning new string
 }
+
 
 
 

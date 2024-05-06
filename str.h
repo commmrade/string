@@ -21,7 +21,7 @@ public:
 	String operator=(const String& other);
 	String operator+(const String& other);
 	String operator+=(const String& other);
-
+	String operator*(unsigned int times);
 
 	//Methods
 	int length() const;
