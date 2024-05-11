@@ -234,21 +234,21 @@ String::iterator& String::iterator::operator++()
 
 bool String::iterator::operator!=(const iterator &other)
 {
-	return this->str != other.str;
+	return this->str != other.str; //Comparing pointer addresses
 }
 
 bool String::iterator::operator==(const iterator &other)
 {
-	return this->str == other.str;
+	return this->str == other.str;	//Comparing pointer addresses
 }
 
 String::iterator String::begin()
 {
-	return iterator(&str[0], 0);
+	return iterator(&str[0], 0); // Returning iterator which points to str[0]
 }
 String::iterator String::end()
 {
-	return iterator(&str[length()], length());
+	return iterator(&str[length()], length());// Returning iterator which points to the end of string + 1 so like the range-for won't stop at the last symbol and won't print it
 }
 
 
