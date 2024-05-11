@@ -184,7 +184,10 @@ String String::substr(size_t index)
 	delete[]temp; //Deallocating temp because temp was copied in retValue constructor
 	return retValue; //returning new string
 }
-
+const char* String::c_str() const
+{
+	return str; //returning const char *
+}
 
 
 

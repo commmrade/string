@@ -27,6 +27,7 @@ public:
 	int length() const;
 	size_t find(const char* to_find);
 	String substr(size_t index);
+	const char* c_str() const;
 	
 
 	//Friend methods

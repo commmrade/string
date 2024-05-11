@@ -17,14 +17,9 @@ int main()
 {
 	
 	
-	str a = "_Test_";
-	// str b = "cccc";
+	str a = "hehehaha";
 
-	str c = a * 2;
-
-	cout << c << " erm" << endl;
-	
-
+	printf("%s\n", a.c_str());
 	
 	
 	
