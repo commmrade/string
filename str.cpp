@@ -1,6 +1,9 @@
 #include "str.h"
 #include <cstdio>
 #include <cstring>
+#include <exception>
+#include <stdexcept>
+#include <string>
 
 
 namespace klewy
@@ -138,6 +141,24 @@ String String::operator+=(const String& other)
 
 	return *this; //Returning itself
 }
+
+const char String::operator[](size_t index) const
+{
+	if(index >= size)
+	{
+		throw std::runtime_error("Out of bounds");
+	}
+	return str[index];
+}
+char& String::operator[](size_t index)
+{
+	if(index >= size)
+	{
+		throw std::runtime_error("Out of bounds");
+	}
+	return str[index];
+}
+
 int String::length() const {
 	return size;
 }
@@ -188,6 +209,65 @@ const char* String::c_str() const
 {
 	return str; //returning const char *
 }
+char String::at(size_t index) const
+{
+	if(index >= size)
+	{
+		throw std::runtime_error("Out of bounds");
+	}
+	return str[index];
+}
+
+//=====================================ITERATOR=================
+
+char& String::iterator::operator*()
+{
+	return str[index]; //Dereferencing 
+}
+String::iterator& String::iterator::operator++()
+{
+	index++;
+
+	return *this;
+}
+
+
+bool String::iterator::operator!=(const iterator &other)
+{
+	return this->index != other.index;
+}
+
+bool String::iterator::operator==(const iterator &other)
+{
+	return this->index == other.index;
+}
+
+String::iterator String::begin()
+{
+	return iterator(&str[0], 0);
+}
+String::iterator String::end()
+{
+	return iterator(&str[length()], length());
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

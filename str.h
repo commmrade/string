@@ -22,19 +22,51 @@ public:
 	String operator+(const String& other);
 	String operator+=(const String& other);
 	String operator*(unsigned int times);
+	const char operator[](size_t index) const;
+	//Todo : [] for index changing
+	char& operator[](size_t index);
+
+
 
 	//Methods
 	int length() const;
 	size_t find(const char* to_find);
 	String substr(size_t index);
 	const char* c_str() const;
-	
+	char at(size_t index) const; 
 
 	//Friend methods
 	friend std::ostream& operator<<(std::ostream& os, const String& dt);
 
 	//Statics
 	static constexpr const size_t npos = -1;
+
+
+
+	class iterator //I think its worst fucking possible implementation of iterator
+	{
+	private:
+		//String &str;
+		char *str;
+		size_t index;
+	public:
+		iterator(char *s, size_t index) : str(s), index(index) {};
+		char& operator*();
+		
+		iterator& operator++();
+		
+		bool operator!=(const iterator &other);
+		
+		bool operator==(const iterator &other);
+		
+
+	};
+
+	iterator begin();
+	iterator end();
+
+
+
 
 
 private:
