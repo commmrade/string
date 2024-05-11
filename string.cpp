@@ -13,7 +13,7 @@ int main()
 {
 	//string a;
 	
-	str a = "hehehahasas";
+	str a = "hehe";
 
 	//printf("%s\n", a.c_str());
 	
@@ -21,13 +21,17 @@ int main()
 	
 	//a[0] = 'f';
 	
-	std::cout << *(++a.begin()) << endl;
+	//std::cout << *(++a.begin()) << endl;
 	
 	printf("====\n");
 
-	for(auto i : a)
+	// for(auto &i : a)
+	// {
+	// 	cout << i << endl;
+	// }
+	for(auto i = a.begin(); i != a.end(); ++i)
 	{
-		cout << i << endl;
+		cout << *i << endl;
 	}
 	printf("====\n");
 

@@ -46,11 +46,10 @@ public:
 	class iterator //I think its worst fucking possible implementation of iterator
 	{
 	private:
-		//String &str;
 		char *str;
-		size_t index;
+		
 	public:
-		iterator(char *s, size_t index) : str(s), index(index) {};
+		iterator(char *s, size_t index) : str(s){};
 		char& operator*();
 		
 		iterator& operator++();

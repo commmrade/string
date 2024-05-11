@@ -222,24 +222,24 @@ char String::at(size_t index) const
 
 char& String::iterator::operator*()
 {
-	return str[index]; //Dereferencing 
+	return *str; //Dereferencing 
 }
 String::iterator& String::iterator::operator++()
 {
-	index++;
-
+	//index++;
+	str++; //Moving pointer by one
 	return *this;
 }
 
 
 bool String::iterator::operator!=(const iterator &other)
 {
-	return this->index != other.index;
+	return this->str != other.str;
 }
 
 bool String::iterator::operator==(const iterator &other)
 {
-	return this->index == other.index;
+	return this->str == other.str;
 }
 
 String::iterator String::begin()
