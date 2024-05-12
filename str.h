@@ -45,7 +45,7 @@ public:
 
 
 
-	class iterator//I think its worst fucking possible implementation of iterator
+	class iterator  //I think its worst fucking possible implementation of iterator
 	{
 	private:
 		char *str;
@@ -55,14 +55,13 @@ public:
 		char& operator*();
 		
 		iterator& operator++();
-		iterator operator+(size_t index);
+		iterator operator+(std::ptrdiff_t index);
+		iterator operator++(int);
 
 
 		bool operator!=(const iterator &other);
 		
 		bool operator==(const iterator &other);
-		
-
 	};
 	iterator begin();
 	iterator end();

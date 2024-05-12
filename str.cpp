@@ -230,9 +230,13 @@ String::iterator& String::iterator::operator++()
 	str++; //Moving pointer by one
 	return *this;
 }
-String::iterator String::iterator::operator+(size_t index)
+String::iterator String::iterator::operator++(int)
+{
+	str++;
+	return *this;
+}
+String::iterator String::iterator::operator+(std::ptrdiff_t index)
 {	
-	
 	if((str + index) >= &str[this->maxlen])
 	{
 		throw std::runtime_error("Out of bounds");

@@ -1,5 +1,7 @@
+#include <cstddef>
 #include <cstdio>
 #include<iostream>
+#include <iterator>
 #include "str.h"
 
 
@@ -15,7 +17,8 @@ int main()
 	
 	str a = "hehe";
 
-	cout << *(a.begin() + 4) << endl;
+	
+	
 	
 	printf("====\n");
 
