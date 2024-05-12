@@ -14,14 +14,11 @@ using str = klewy::String;
 int main()
 {
 	
-	str a = "haha";
-
-
-	for(auto i : a)
+	while(true)
 	{
-		cout << i << endl;
+		str a = "fufufdufudfdusfdsufsdufsdufsu";
+		str b = a * 100; //Mem leak test
 	}
-	
 
 
 	return 0;
