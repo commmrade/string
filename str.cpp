@@ -230,6 +230,17 @@ String::iterator& String::iterator::operator++()
 	str++; //Moving pointer by one
 	return *this;
 }
+String::iterator String::iterator::operator+(size_t index)
+{	
+	
+	if((str + index) >= &str[this->maxlen])
+	{
+		throw std::runtime_error("Out of bounds");
+	}
+	str = str + index; //Moving pointer by x
+	return *this;
+}
+
 
 
 bool String::iterator::operator!=(const iterator &other)
@@ -244,7 +255,7 @@ bool String::iterator::operator==(const iterator &other)
 
 String::iterator String::begin()
 {
-	return iterator(&str[0], 0); // Returning iterator which points to str[0]
+	return iterator(&str[0], length()); // Returning iterator which points to str[0]
 }
 String::iterator String::end()
 {

@@ -15,13 +15,7 @@ int main()
 	
 	str a = "hehe";
 
-	//printf("%s\n", a.c_str());
-	
-	string f = "nifgffdghdfghdfghf";
-	
-	//a[0] = 'f';
-	
-	//std::cout << *(++a.begin()) << endl;
+	cout << *(a.begin() + 4) << endl;
 	
 	printf("====\n");
 
@@ -29,9 +23,9 @@ int main()
 	// {
 	// 	cout << i << endl;
 	// }
-	for(auto i = a.begin(); i != a.end(); ++i)
+	for(auto i : a)
 	{
-		cout << *i << endl;
+		cout << i << endl;
 	}
 	printf("====\n");
 

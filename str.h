@@ -2,6 +2,8 @@
 #include<iostream>
 #include<assert.h>
 #include<cstring>
+#include <stdint.h>
+#include<iterator>
 //#define DEBUG
 
 
@@ -43,24 +45,25 @@ public:
 
 
 
-	class iterator //I think its worst fucking possible implementation of iterator
+	class iterator//I think its worst fucking possible implementation of iterator
 	{
 	private:
 		char *str;
-		
+		size_t maxlen;
 	public:
-		iterator(char *s, size_t index) : str(s){};
+		iterator(char *s, size_t mx) : str(s), maxlen(mx) {};
 		char& operator*();
 		
 		iterator& operator++();
-		
+		iterator operator+(size_t index);
+
+
 		bool operator!=(const iterator &other);
 		
 		bool operator==(const iterator &other);
 		
 
 	};
-
 	iterator begin();
 	iterator end();
 
