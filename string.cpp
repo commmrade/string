@@ -13,24 +13,15 @@ using str = klewy::String;
 
 int main()
 {
-	//string a;
 	
-	str a = "hehe";
+	str a = "haha";
 
-	
-	
-	
-	printf("====\n");
 
-	// for(auto &i : a)
-	// {
-	// 	cout << i << endl;
-	// }
 	for(auto i : a)
 	{
 		cout << i << endl;
 	}
-	printf("====\n");
+	
 
 
 	return 0;

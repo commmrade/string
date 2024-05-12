@@ -50,13 +50,16 @@ public:
 	private:
 		char *str;
 		size_t maxlen;
+		
 	public:
-		iterator(char *s, size_t mx) : str(s), maxlen(mx) {};
+		using difference_type = std::ptrdiff_t;
+
+		iterator(char *s, size_t mx) : str(s), maxlen(mx) {}; // Passing maxlen so the iterator can't point to not used memory
 		char& operator*();
 		
-		iterator& operator++();
+		iterator operator++(); //Prefix incr
 		iterator operator+(std::ptrdiff_t index);
-		iterator operator++(int);
+		iterator operator++(int); //Postfix incr
 
 
 		bool operator!=(const iterator &other);

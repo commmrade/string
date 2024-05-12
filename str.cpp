@@ -224,7 +224,7 @@ char& String::iterator::operator*()
 {
 	return *str; //Dereferencing 
 }
-String::iterator& String::iterator::operator++()
+String::iterator String::iterator::operator++()
 {
 	//index++;
 	str++; //Moving pointer by one
@@ -232,8 +232,11 @@ String::iterator& String::iterator::operator++()
 }
 String::iterator String::iterator::operator++(int)
 {
-	str++;
-	return *this;
+	iterator temp = *this;
+	
+	this->str++; //Incrementing current iterator
+
+	return temp; //Returning new iterator
 }
 String::iterator String::iterator::operator+(std::ptrdiff_t index)
 {	
