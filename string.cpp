@@ -14,11 +14,13 @@ using str = klewy::String;
 int main()
 {
 	
-	str a = "hello";
-	str b = " world";
-	str c = a + b;
+	str a = "ffuck";
+	str b = "fuck";
 
-	std::cout << c << std::endl;
+	if(a != b)
+	{
+		printf("true\n");
+	}
 
 
 	return 0;

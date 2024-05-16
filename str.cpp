@@ -238,6 +238,26 @@ char& String::iterator::operator*()
 {
 	return *str; //Dereferencing 
 }
+bool String::operator==(const String &other) const
+{
+	if(strcmp(str, other.str) == 0) { // 0 - equal <1 smth else >1 smth  else
+		return true;
+	}
+
+	return false;
+}
+
+bool String::operator!=(const String &other) const
+{
+	if(strcmp(str, other.str) != 0) { // 0 - equal <1 smth else >1 smth  else
+		return true;
+	}
+
+	return false;
+}
+
+
+
 String::iterator String::iterator::operator++()
 {
 	//index++;
