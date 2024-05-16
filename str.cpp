@@ -52,6 +52,18 @@ String::String(String&& other) noexcept
 #endif
 
 }
+String& String::operator=(String &&other)
+{
+	size = other.size;
+	str = other.str;
+
+	other.size = 0;
+	other.str = nullptr; 
+#ifdef DEBUG
+	std::cout << "operator = Move" << std::endl;
+#endif
+	return *this;
+}
 
 std::ostream& operator<<(std::ostream& os, const String& st)
 {
@@ -64,7 +76,7 @@ std::ostream& operator<<(std::ostream& os, const String& st)
 	return os;
 }
 
-String String::operator+(const String& other)
+String& String::operator+(const String& other)
 {
 	int tmp_size = size; //Saving prev size
 	char* temp = new char[tmp_size + 1]; //Creating a buffer for the old str
@@ -93,7 +105,7 @@ String String::operator+(const String& other)
 	return *this;
 }
 
-String String::operator*(unsigned int times)
+String& String::operator*(unsigned int times)
 {
 	
 
@@ -117,7 +129,7 @@ String String::operator*(unsigned int times)
 }
 
 
-String String::operator=(const String& other)
+String& String::operator=(const String& other)
 {
 	
 	delete[]str;
@@ -134,7 +146,9 @@ String String::operator=(const String& other)
 #endif
 }
 
-String String::operator+=(const String& other)
+
+
+String& String::operator+=(const String& other)
 {
 	*this = *this + other.str; //I use operator+ here, so I won't have to write whole different logic for this operator
 	//You can interpret this like [String = String + String] which exactly fits operator+. 

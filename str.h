@@ -4,7 +4,7 @@
 #include<cstring>
 #include <stdint.h>
 #include<iterator>
-//#define DEBUG
+#define DEBUG
 
 
 namespace klewy
@@ -20,10 +20,11 @@ public:
 	String(String&& other) noexcept; //Move constructor
 
 	//Operators override
-	String operator=(const String& other);
-	String operator+(const String& other);
-	String operator+=(const String& other);
-	String operator*(unsigned int times);
+	String& operator=(const String& other);
+	String& operator=(String &&other); //Move =
+	String& operator+(const String& other);
+	String& operator+=(const String& other);
+	String& operator*(unsigned int times);
 	const char operator[](size_t index) const;
 	//Todo : [] for index changing
 	char& operator[](size_t index);
