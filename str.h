@@ -4,6 +4,8 @@
 #include<cstring>
 #include <stdint.h>
 #include<iterator>
+
+
 //#define DEBUG
 
 
@@ -22,7 +24,7 @@ public:
 	//Operators override
 	String& operator=(const String& other);
 	String& operator=(String &&other); //Move =
-	String& operator+(const String& other);
+	String operator+(const String& other);
 	String& operator+=(const String& other);
 	String& operator*(unsigned int times);
 

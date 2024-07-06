@@ -76,33 +76,21 @@ std::ostream& operator<<(std::ostream& os, const String& st)
 	return os;
 }
 
-String& String::operator+(const String& other)
+String String::operator+(const String& other)
 {
-	int tmp_size = size; //Saving prev size
-	char* temp = new char[tmp_size + 1]; //Creating a buffer for the old str
-	memcpy(temp, str, tmp_size); //Copying old str to temp
-	temp[size] = '\0'; //Null terminating it
-
-	size += other.size; // The size of the concat string
-
-	delete[]str; //Deallocating the old string
-
-	str = new char[size + 2]; //Allocating string
-	memcpy(str, temp, tmp_size); //Copying old string here
-	delete[]temp; //Deallocating memory for the temp
-
-	str[tmp_size] = '\0'; 
-
-
-	strncat(str, other.str, other.size + 2); //Connecting two string together; size + 2: 2 stands for 2 null terminators.
+	String result("");
 	
-    
+	result.size = size + other.size;
+
+	strcat(result.str, str);
+	strcat(result.str, other.str);    
 	//The first was before concat. The second is for the final concated string
 #ifdef DEBUG
 	printf("Operator +\n");
+	//printf("String is %s| \nlen is: %d\n", str, size);
 #endif
 	
-	return *this;
+	return result;
 }
 
 String& String::operator*(unsigned int times)
