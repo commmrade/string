@@ -10,9 +10,10 @@ namespace klewy
 {
 String::String(const char* str)
 {
-	size = strlen(str); // Size of str parameter
+	auto t_size = strlen(str);
 
 	this->str = new char[size + 1]; //Allocating memory for a string
+	size = t_size; // Size of str parameter
 	memcpy(this->str, str, size); // Copying memory from parameter string
 	this->str[size] = '\0'; //Null terminating, now it's a proper string.
 
@@ -30,8 +31,10 @@ String::~String()
 }
 String::String(const String& other)
 {
+	auto other_size = other.size;
+	str = new char[other_size + 1]; //Allocating memory and + 1 for the null terminator
+
 	size = other.size; //Getting size from the other string
-	str = new char[size + 1]; //Allocating memory and + 1 for the null terminator
 	memcpy(str, other.str, size); //Copying memory from the other string 
 	str[size] = '\0';
 #ifdef DEBUG
@@ -50,9 +53,8 @@ String::String(String&& other) noexcept
 #ifdef DEBUG
 	printf("Move\n");
 #endif
-
 }
-String& String::operator=(String &&other)
+String& String::operator=(String &&other) noexcept
 {
 	size = other.size;
 	str = other.str;
@@ -70,8 +72,6 @@ std::ostream& operator<<(std::ostream& os, const String& st)
 #ifdef DEBUG
 	printf("ostream func\n");
 #endif
-
-
 	os << st.str;
 	return os;
 }
@@ -81,7 +81,6 @@ String String::operator+(const String& other)
 	String result("");
 	
 	result.size = size + other.size;
-
 	strcat(result.str, str);
 	strcat(result.str, other.str);    
 	//The first was before concat. The second is for the final concated string
@@ -104,15 +103,12 @@ String& String::operator*(unsigned int times)
 	{
 		snprintf(temp + (i * this->size), this->size + 1, "%s", this->str); //copying itself n times
 	}
+
 	temp[temp_size] = '\0'; //Null terminating this moron to avoid any problems
-	
 
 	delete [] this->str; //Deallocating the old str
-
 	size = temp_size; //Updating size
-
 	this->str = temp; //Changing str
-
 	return *this;
 }
 
@@ -121,8 +117,9 @@ String& String::operator=(const String& other)
 {
 	
 	delete[]str;
+	auto other_size = other.size;
+	str = new char[other_size + 1];
 	size = other.size;
-	str = new char[size + 1];
 	memcpy(str, other.str, size);
 	str[size] = '\0';
 
