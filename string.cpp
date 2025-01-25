@@ -16,7 +16,7 @@ int main()
 {
 	
 	str a = "fuck";
-	a += " niggas";
+	a += " авфывы";
 	
 
 	std::cout << a << std::endl;
